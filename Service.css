@@ -1,0 +1,259 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 200px;
+  height: auto;
+}
+.logo {
+  font-weight: 700;
+  font-size: 25px;
+}
+.nav-link {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.nav-bar li {
+  display: inline-block;
+  padding: 0 20px;
+}
+.nav-bar li a {
+  text-decoration: none;
+  list-style-type: none;
+  font-size: 15px;
+  color: black;
+  font-weight: normal;
+  position: relative;
+}
+.nav-bar li a::after {
+  content: "";
+  background: #0078ff;
+  height: 3px;
+  width: 0;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+.nav-bar li a:hover::after {
+  width: 100%;
+}
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.nav-link {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+    width: 5%;
+  }
+
+  .nav-link {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+  }
+
+  .nav-link.active {
+    display: flex;
+  }
+
+  .nav-bar li {
+    margin: 10px 0;
+  }
+}
+
+.service {
+  padding: 50px 20px;
+  background-color: #ffffff;
+}
+
+.test-service {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.test-service h1 {
+  font-size: 36px;
+  color: #0078ff;
+  margin-bottom: 10px;
+}
+
+.test-service p {
+  font-size: 16px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.service-box {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+
+.service-card {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+}
+
+.service-card h1 {
+  font-size: 24px;
+  color: #0078ff;
+  margin-bottom: 10px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1;
+  padding: 10px 0;
+}
+/* Button Styles */
+.service-card a button {
+  padding: 10px 20px;
+  font-size: 16px;
+  color: white;
+  background-color: #0078ff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.service-card a button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.service-card a button:hover::before {
+  left: 0;
+}
+
+.service-card a button:hover {
+  background-color: #0056cc;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.service-card a button:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 768px) {
+  .test-service h1 {
+    font-size: 28px;
+  }
+
+  .test-service p {
+    font-size: 14px;
+  }
+
+  .service-card h1 {
+    font-size: 20px;
+  }
+
+  .service-card p {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .test-service h1 {
+    font-size: 24px;
+  }
+
+  .test-service p {
+    font-size: 12px;
+  }
+
+  .service-card h1 {
+    font-size: 18px;
+  }
+
+  .service-card p {
+    font-size: 12px;
+  }
+}
+/* Icon Styles */
+.service-card i {
+  font-size: 28px; /* Make the icons larger */
+  color: #0078ff; /* Use a consistent blue color */
+  margin-bottom: 15px; /* Add spacing below the icon */
+  transition: transform 0.3s ease, color 0.3s ease; /* Add smooth animation */
+}
+
+/* Hover Effect for Icons */
+.service-card:hover i {
+  transform: scale(1.2); /* Slightly enlarge the icon on hover */
+  color: #0056cc; /* Change the color on hover */
+}
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply the animation to the service section */
+.service {
+  animation: fadeIn 1s ease-in-out;
+}
+
+.service-card {
+  animation: fadeIn 1s ease-in-out;
+}
